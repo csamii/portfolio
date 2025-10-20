@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Button from './ui/Button';
-import { ArrowDown, Mail, Download } from 'lucide-react';
+import { ArrowDown, Mail, Download, Github, Linkedin } from 'lucide-react';
 
 export function Hero() {
   const scrollToSection = () => {
@@ -132,7 +132,7 @@ export function Hero() {
           >
             Get in Touch
           </Button>
-          <Button asChild 
+          <Button 
           className='flex bg-slate-500 text-white'
           >
             <a href="#" download className='flex'>
@@ -148,8 +148,8 @@ export function Hero() {
           className="flex items-center justify-center gap-4"
         >
           {[
-            // { Icon: Github, href: 'https://github.com', label: 'GitHub' },
-            // { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+            { Icon: Github, href: 'https://github.com', label: 'GitHub' },
+            { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
             { Icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
           ].map(({ Icon, href, label }) => (
             <motion.div
@@ -157,7 +157,7 @@ export function Hero() {
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button variant="ghost" size="icon" asChild>
+              <Button size="icon">
                 <a
                   href={href}
                   target="_blank"

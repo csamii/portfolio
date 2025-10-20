@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { motion, AnimatePresence } from 'motion/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import Button from './ui/Button';
@@ -17,31 +16,31 @@ export function Navbar() {
   const { theme, activeSection, isMenuOpen, toggleTheme, setActiveSection, setMenuOpen } = usePortfolioStore();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    useEffect(() => {
+        const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
-      const sections = navItems.map((item) => item.href.slice(1));
-      const current = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 150 && rect.bottom >= 150;
+        // Update active section based on scroll position
+        const sections = navItems.map((item) => item.href.slice(1));
+        const current = sections.find((section) => {
+            const element = document.getElementById(section);
+            if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 150 && rect.bottom >= 150;
+            }
+            return false;
+        });
+        
+        if (current) {
+            setActiveSection(current);
         }
-        return false;
-      });
-      
-      if (current) {
-        setActiveSection(current);
-      }
-    };
+        };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [setActiveSection]);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [setActiveSection]);
 
-  const scrollToSection = () => {
+  const scrollToSection = (href) => {
     const element = document.getElementById(href.slice(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -82,7 +81,6 @@ export function Navbar() {
                 transition={{ delay: 0.1 * index }}
               >
                 <Button
-                  variant="ghost"
                   onClick={() => scrollToSection(item.href)}
                   className={`relative ${
                     activeSection === item.href.slice(1)
@@ -151,7 +149,7 @@ export function Navbar() {
               {navItems.map((item) => (
                 <Button
                   key={item.name}
-                  variant={activeSection === item.href.slice(1) ? 'default' : 'ghost'}
+                //   variant={activeSection === item.href.slice(1) ? 'default' : 'ghost'}
                   onClick={() => scrollToSection(item.href)}
                   className="w-full justify-start"
                 >

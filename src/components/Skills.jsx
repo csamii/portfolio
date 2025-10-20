@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Badge } from './ui/Badge';
 import { Card } from './ui/Card';
@@ -137,7 +136,7 @@ export function Skills() {
                 }}
                 whileHover={{ scale: 1.1, y: -5 }}
               >
-                <Badge variant="secondary" className="px-4 py-2 text-sm">
+                <Badge className="px-4 py-2 text-sm">
                   {skill}
                 </Badge>
               </motion.div>
