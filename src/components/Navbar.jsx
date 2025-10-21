@@ -44,7 +44,7 @@ export function Navbar() {
     const element = document.getElementById(href.slice(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
+      setTimeout(() => setMenuOpen(false), 400);
     }
   };
 
@@ -149,7 +149,6 @@ export function Navbar() {
               {navItems.map((item) => (
                 <Button
                   key={item.name}
-                //   variant={activeSection === item.href.slice(1) ? 'default' : 'ghost'}
                   onClick={() => scrollToSection(item.href)}
                   className="w-full justify-start"
                 >

@@ -51,9 +51,6 @@ export function Footer() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button
-                      variant="ghost"
-                      size="icon"
-                      asChild
                       className="h-9 w-9"
                     >
                       <a
