@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Github, Linkedin, Mail, Twitter } from 'lucide-react';
-import Button from './ui/button';
+import Button from './ui/Button';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com', label: 'GitHub' },
