@@ -5,7 +5,7 @@ export const usePortfolioStore = create()(
   persist(
     (set) => ({
       theme: 'dark',
-      activeSection: 'hero',
+      // activeSection: 'hero',
       isMenuOpen: false,
       toggleTheme: () =>
         set((state) => ({

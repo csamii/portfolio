@@ -18,35 +18,35 @@ export function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-        setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 50);
 
-        // Update active section based on scroll position
-        const sections = navItems.map((item) => item.href.slice(1));
-        const current = sections.find((section) => {
-            const element = document.getElementById(section);
-            if (element) {
-            const rect = element.getBoundingClientRect();
-            return rect.top <= 150 && rect.bottom >= 150;
+            // Update active section based on scroll position
+            const sections = navItems.map((item) => item.href.slice(1));
+            const current = sections.find((section) => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    return rect.top <= 150 && rect.bottom >= 150;
+                }
+                return false;
+            });
+            
+            if (current) {
+                setActiveSection(current);
             }
-            return false;
-        });
-        
-        if (current) {
-            setActiveSection(current);
-        }
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [setActiveSection]);
 
-  const scrollToSection = (href) => {
-    const element = document.getElementById(href.slice(1));
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => setMenuOpen(false), 400);
-    }
-  };
+    const scrollToSection = (href) => {
+        const element = document.getElementById(href.slice(1));
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => setMenuOpen(false), 400);
+        }
+    };
 
   return (
     <motion.nav
@@ -54,11 +54,11 @@ export function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md shadow-md'
+          ? 'backdrop-blur-md shadow-md'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 dark:text-white">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
@@ -68,7 +68,7 @@ export function Navbar() {
             className="cursor-pointer"
             onClick={() => scrollToSection('#hero')}
           >
-            <span className="text-primary">{'<'}Portfolio{' />'}</span>
+            <span className="text-black dark:text-white">{'<'}Portfolio{' />'}</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -82,17 +82,17 @@ export function Navbar() {
               >
                 <Button
                   onClick={() => scrollToSection(item.href)}
-                  className={`relative ${
+                  className={`relative hover:text-black/50 dark:hover:text-white/50 ${
                     activeSection === item.href.slice(1)
-                      ? 'text-primary'
-                      : 'text-foreground/80'
+                      ? 'text-black dark:text-white'
+                      : 'text-black dark:text-white'
                   }`}
                 >
                   {item.name}
                   {activeSection === item.href.slice(1) && (
                     <motion.div
                       layoutId="activeSection"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                      className="absolute bottom-0 left-0 right-0 h-1 bg-black dark:bg-white"
                       initial={false}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />

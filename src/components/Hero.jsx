@@ -3,7 +3,7 @@ import Button from './ui/Button';
 import { ArrowDown, Mail, Download, Github, Linkedin } from 'lucide-react';
 
 export function Hero() {
-  const scrollToSection = () => {
+  const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -33,11 +33,81 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="dark:bg-gray-800 dark:text-white min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden"
+      className="
+        text-white
+        relative min-h-screen flex items-center justify-center 
+        px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden bg-cover bg-center
+        bg-[url('assets/hero.png')]
+        dark:bg-[linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('assets/971.jpg')]"
     >
+    <div className="absolute inset-0 bg-black/30 dark:bg-transparent"></div>
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10" />
-      
+      {/* Blob */}
+      <motion.div
+        className="absolute w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
+        animate={{ x: [0, 500, -500, 300, -200, 0], y: [0, -300, 200, -400, 100, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
+        animate={{ x: [0, -600, 400, -300, 500, 0], y: [0, 400, -300, 200, -200, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
+        animate={{ x: [0, 300, -500, 200, -400, 0], y: [0, -400, 300, -100, 200, 0], }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Floating Square */}
+      <motion.div
+        className="absolute w-16 h-16 bg-yellow-300 opacity-20 rounded-md shadow-lg"
+        style={{ top: "30%", left: "10%" }}
+        animate={{
+          y: [0, -30, 0, 30, 0],
+          rotate: [0, 15, -15, 0],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Rotating Triangle */}
+      <motion.svg
+        className="absolute w-20 h-20 text-green-400 opacity-20"
+        viewBox="0 0 100 100"
+        style={{ bottom: "20%", left: "60%" }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+      >
+        <polygon points="50,10 90,90 10,90" fill="currentColor" />
+      </motion.svg>
+
+      {/* Bouncing Cone (stylized with gradients) */}
+      <motion.div
+        className="absolute w-0 h-0 opacity-10"
+        style={{
+          top: "15%",
+          right: "15%",
+          borderLeft: "25px solid transparent",
+          borderRight: "25px solid transparent",
+          borderBottom: "50px solid #4F46E5",
+          filter: "drop-shadow(0 0 8px rgba(79,70,229,0.3))",
+        }}
+        animate={{
+          y: [0, -40, 0, 40, 0],
+          rotate: [0, 5, -5, 0],
+        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Floating Circle */}
+      <motion.div
+        className="absolute w-12 h-12 bg-red-400 rounded-full opacity-30 shadow-md"
+        style={{ bottom: "10%", left: "15%" }}
+        animate={{ y: [0, -50, 0, 20, 0], x: [0, 50, -10, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       {/* Animated circles */}
       <motion.div
         className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
@@ -65,7 +135,7 @@ export function Hero() {
       />
 
       <motion.div
-        className="max-w-4xl mx-auto text-center relative z-10"
+        className="dark:text-white text-black max-w-4xl mx-auto text-center relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -83,19 +153,13 @@ export function Hero() {
 
         {/* Greeting */}
         <motion.div variants={itemVariants} className="mb-4">
-          <span className="text-primary">Hello, I'm</span>
+          <span className="text-3xl md:text-3xl font-bold mb-4">Hello, I'm Chidi,</span>
         </motion.div>
-
-        {/* Name */}
-        <motion.h1 variants={itemVariants} className="mb-4">
-          <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Your Name
-          </span>
-        </motion.h1>
 
         {/* Title */}
         <motion.h2 variants={itemVariants} className="text-muted-foreground mb-6">
-          Full Stack Developer & Creative Problem Solver
+            A Frontend Developer & Designer who blends creativity and code to build clean, 
+            modern, and meaningful web experiences.
         </motion.h2>
 
         {/* Description */}
@@ -103,9 +167,8 @@ export function Hero() {
           variants={itemVariants}
           className="text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          I craft elegant digital experiences that blend aesthetics with functionality.
-          Passionate about turning complex problems into simple, beautiful solutions
-          that make a difference.
+          I love crafting elegant solutions that turn complex ideas into simple, 
+          beautiful, and functional designs.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -180,7 +243,7 @@ export function Hero() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ArrowDown className="w-6 h-6 text-primary" />
+          <ArrowDown className="w-6 h-6 text-black dark:text-white" />
         </motion.button>
       </motion.div>
     </section>
