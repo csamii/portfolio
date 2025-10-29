@@ -80,7 +80,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="mb-4">
+          <h2 className="text-3xl font-bold mb-4 max-sm:text-lg">
             Featured <span className="text-primary">Projects</span>
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />

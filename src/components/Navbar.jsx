@@ -58,7 +58,7 @@ export function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 dark:text-white">
+      <div className="max-w-7xl mx-auto pl-4 pr-10 sm:px-6 lg:px-8 dark:text-white">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
@@ -103,7 +103,7 @@ export function Navbar() {
           </div>
 
           {/* Theme Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center">
             <Button
               onClick={toggleTheme}
               aria-label="Toggle theme"
