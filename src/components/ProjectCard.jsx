@@ -61,8 +61,8 @@ export function ProjectCard({ title, description, image, tags, demoLink, githubL
 
         {/* Content */}
         <div className="p-6 flex flex-col flex-grow">
-          <h3 className="mb-3 dark:text-white">{title}</h3>
-          <p className="text-muted-foreground mb-4 flex-grow dark:text-white">
+          <h3 className="mb-3 dark:text-white font-bold">{title}</h3>
+          <p className="text-muted-foreground mb-4 flex-grow dark:text-white max-sm:text-sm">
             {description}
           </p>
           

@@ -12,19 +12,13 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'your.email@example.com',
+    value: 'chidisamuel16@gmail.com',
     href: 'mailto:your.email@example.com',
-  },
-  {
-    icon: Phone,
-    title: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
   },
   {
     icon: MapPin,
     title: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Port Harcourt, Nigeria',
     href: '#',
   },
 ];
@@ -134,7 +128,7 @@ export function Contact() {
           >
             <Card className="p-8 bg-background dark:bg-[#1E1E1E]">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+                {/* <div>
                   <label htmlFor="name" className="block text-sm mb-2 dark:text-gray-300">
                     Name *
                   </label>
@@ -148,7 +142,7 @@ export function Contact() {
                     placeholder="Your name"
                     className="w-full dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"
                   />
-                </div>
+                </div> */}
 
                 <div>
                   <label htmlFor="email" className="block text-sm mb-2 dark:text-gray-300">

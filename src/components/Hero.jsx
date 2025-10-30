@@ -198,7 +198,10 @@ export function Hero() {
           <Button 
           className='flex bg-slate-500 text-white'
           >
-            <a href="#" download className='flex'>
+            <a 
+                // href="/resume.pdf"
+                // download="Chidi_Onwumere_Resume.pdf"
+                className='flex'>
               <Download className="w-4 h-4 mr-2" />
               Resume
             </a>
@@ -211,20 +214,29 @@ export function Hero() {
           className="flex items-center justify-center gap-4"
         >
           {[
-            { Icon: Github, href: 'https://github.com', label: 'GitHub' },
-            { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-            { Icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
-          ].map(({ Icon, label }) => (
+            { Icon: Github, href: 'https://github.com/csamii', label: 'GitHub' },
+            { Icon: Linkedin, href: 'https://www.linkedin.com/in/chidi-onwumere-46a087105', label: 'LinkedIn' },
+            { Icon: Mail, href: 'mailto:chidisamuel16@gmail.com', label: 'Email' },
+          ].map(({ Icon, label, href }) => (
             <motion.div
               key={label}
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
-                <Button
-                    className='bg-white dark:bg-black'
+                <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex items-center justify-center w-full h-full"
                 >
-                    <Icon className="w-5 h-5" />
-                </Button>
+                    <Button
+                        className='bg-black dark:bg-white'
+                    >
+                            <Icon className="w-5 h-5 text-white dark:text-black" />
+
+                    </Button>
+                </a>
             </motion.div>
           ))}
         </motion.div>

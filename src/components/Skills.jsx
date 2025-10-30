@@ -46,9 +46,9 @@ const toolsList = [
 ];
 
 const learningList = [
-  { name: "Next.js (App Router & Server Components)" },
-  { name: "TypeScript for scalable React apps" },
-  { name: "Performance optimization & accessibility audits" },
+    { name: "TypeScript for scalable React apps" },
+    { name: "Next.js (App Router & Server Components)" },
+    { name: "React Native" },
 ];
 
 export function Skills() {

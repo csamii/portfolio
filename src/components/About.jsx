@@ -73,8 +73,9 @@ export function About() {
                         My goal is to use design and code as tools to open new doors of opportunity
                     </p>
                     <p>
-                        I'm currently exploring Next.js, TypeScript, and Native React to push the 
-                        limits of user interactivity and performance
+                        I'm currently exploring Next.js, TypeScript, and Native React to push the limits
+                         of user interactivity and performance, ensuring my craft is always advancing to
+                          meet tomorrow's challenges.
                     </p>
                     
                     <Button

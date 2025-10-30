@@ -3,10 +3,10 @@ import { Heart, Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import Button from './ui/Button';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/csamii', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/chidi-onwumere-46a087105', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://x.com/csamii27', label: 'Twitter' },
+  { icon: Mail, href: 'mailto:chidisamuel@gmail.com', label: 'Email' },
 ];
 
 const footerLinks = [
@@ -106,21 +106,13 @@ export function Footer() {
                         <ul className="space-y-2 text-sm text-muted-foreground dark:text-gray-400">
                             <li>
                                 <a
-                                    href="mailto:your.email@example.com"
+                                    href="mailto:chidisamuel16@gmail.com"
                                     className="hover:text-primary dark:hover:text-blue-400 transition-colors"
                                 >
-                                    your.email@example.com
+                                    Email
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    href="tel:+15551234567"
-                                    className="hover:text-primary dark:hover:text-blue-400 transition-colors"
-                                >
-                                    +1 (555) 123-4567
-                                </a>
-                            </li>
-                            <li>San Francisco, CA</li>
+                            <li>Port harcourt, Nigeria</li>
                         </ul>
                     </motion.div>
                 </div>

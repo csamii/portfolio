@@ -150,7 +150,7 @@ export function Navbar() {
                 <Button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="w-full justify-start"
+                  className="w-full justify-start dark:text-white"
                 >
                   {item.name}
                 </Button>
