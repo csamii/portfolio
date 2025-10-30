@@ -69,9 +69,9 @@ export function Projects() {
 
   return (
     <section
-      id="projects"
-      ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30"
+        id="projects"
+        ref={ref}
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 dark:bg-[#1E1E1E] transition-colors duration-500" 
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -80,17 +80,16 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4 max-sm:text-lg">
-            Featured <span className="text-primary">Projects</span>
+          <h2 className="text-2xl font-extrabold text-gray-900 dark:text-gray-100 text-center mb-12">
+            Featured Projects
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          
+          <p className="mt-4 text-muted-foreground dark:text-gray-400 max-w-2xl mx-auto">
             A selection of projects that showcase my skills and passion for
             creating impactful digital experiences
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {displayedProjects.map((project, index) => (
             <ProjectCard
@@ -101,7 +100,6 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Show More/Less Button */}
         {allProjects.length > 3 && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -111,7 +109,7 @@ export function Projects() {
           >
             <Button
               onClick={() => setShowAll(!showAll)}
-              className="group"
+              className="group bg-black text-white dark:bg-white dark:text-black"
             >
               {showAll ? 'Show Less' : 'View All Projects'}
               <motion.span

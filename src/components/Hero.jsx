@@ -214,22 +214,17 @@ export function Hero() {
             { Icon: Github, href: 'https://github.com', label: 'GitHub' },
             { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
             { Icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
-          ].map(({ Icon, href, label }) => (
+          ].map(({ Icon, label }) => (
             <motion.div
               key={label}
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="icon">
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
+                <Button
+                    className='bg-white dark:bg-black'
                 >
-                  <Icon className="w-5 h-5" />
-                </a>
-              </Button>
+                    <Icon className="w-5 h-5" />
+                </Button>
             </motion.div>
           ))}
         </motion.div>

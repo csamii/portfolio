@@ -44,7 +44,7 @@ export function Navbar() {
         const element = document.getElementById(href.slice(1));
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => setMenuOpen(false), 400);
+            setTimeout(() => setMenuOpen(false), 1000);
         }
     };
 
@@ -114,9 +114,9 @@ export function Navbar() {
                 transition={{ duration: 0.3 }}
               >
                 {theme === 'dark' ? (
-                  <Moon className="w-5 h-5" />
+                  <Moon className="size-5 max-sm:size-6" />
                 ) : (
-                  <Sun className="w-5 h-5" />
+                  <Sun className="size-5 max-sm:size-6" />
                 )}
               </motion.div>
             </Button>
@@ -127,9 +127,9 @@ export function Navbar() {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="w-5 h-5" />
+                <X className="size-5 max-sm:size-8" />
               ) : (
-                <Menu className="w-5 h-5" />
+                <Menu className="size-5 max-sm:size-8" />
               )}
             </Button>
           </div>

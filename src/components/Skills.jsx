@@ -64,14 +64,19 @@ export function Skills() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
-        <motion.h2 
-          className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
         >
-          My Technical Competencies
-        </motion.h2>
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-gray-100 text-center mb-8">
+                My Technical Competencies
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto dark:text-gray-100">
+                A comprehensive toolkit of modern technologies and frameworks I use to bring ideas to life.
+            </p>
+        </motion.div>
 
         {/* Two-Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
@@ -82,7 +87,7 @@ export function Skills() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 border-b-2 border-blue-500/50 pb-2">
+            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-8 border-b-2 border-blue-500/50 pb-2">
               Core Competencies
             </h3>
             
@@ -96,12 +101,13 @@ export function Skills() {
           </motion.div>
 
           {/* RIGHT COLUMN */}
+          
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 border-b-2 border-blue-500/50 pb-2">
+            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-8 border-b-2 border-blue-500/50 pb-2">
               Development Toolkit
             </h3>
             

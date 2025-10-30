@@ -61,15 +61,15 @@ export function ProjectCard({ title, description, image, tags, demoLink, githubL
 
         {/* Content */}
         <div className="p-6 flex flex-col flex-grow">
-          <h3 className="mb-3">{title}</h3>
-          <p className="text-muted-foreground mb-4 flex-grow">
+          <h3 className="mb-3 dark:text-white">{title}</h3>
+          <p className="text-muted-foreground mb-4 flex-grow dark:text-white">
             {description}
           </p>
           
           {/* Tags */}
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <Badge key={tag} className="text-xs">
+              <Badge key={tag} className="text-xs bg-teal-200 dark:bg-blue-900 dark:text-white">
                 {tag}
               </Badge>
             ))}
