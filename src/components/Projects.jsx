@@ -4,7 +4,7 @@ import { useInView } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
 import Button from './ui/Button';
 import recipeBoxImage from '../assets/recipe-box.png';
-import quizQuest from '../assets/quizquest.png';
+import quizQuest from '../assets/quizQ.png';
 
 const allProjects = [
   {
